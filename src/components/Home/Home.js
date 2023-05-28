@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import YouTube from "react-youtube";
 
 export default function Home() {
-  const [searchTerm, setSearchTerm] = useState("")
+  const [searchTerm, setSearchTerm] = useState("");
   const [videoIds, setVideoIds] = useState([]);
-  
+
   const apiUrl = process.env.REACT_APP_API_BASE_URL;
   const apiKey = process.env.REACT_APP_API_KEY;
 
-
   function handleSearch(event) {
-    setSearchTerm(event.target.value)
+    setSearchTerm(event.target.value);
   }
 
   async function fetchResults() {
@@ -31,7 +30,7 @@ export default function Home() {
     setSearchTerm("");
     fetchResults();
   }
-  
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -46,7 +45,7 @@ export default function Home() {
         </button>
       </form>
       {!videoIds.length && (
-        <div class="alert alert-dark" role="alert">
+        <div className="alert alert-dark" role="alert">
           No search results yet!, Please submit a search above!
         </div>
       )}
