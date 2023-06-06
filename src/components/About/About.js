@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../images/yt_logo_light.png";
 import "./About.css";
 
-function About() {
+export default function About() {
   return (
     <div id="About">
       <h2>
@@ -53,5 +53,3 @@ function About() {
     </div>
   );
 }
-
-export default About;
