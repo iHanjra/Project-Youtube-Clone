@@ -54,6 +54,7 @@ function PlayVideo({ apiUrl, apiKey, topBtn }) {
             onChange={(event) => setCommenterName(event.target.value)}
             value={commenterName}
             placeholder="Name..."
+            required
           />
           <div>
             <label htmlFor="comment">Comment</label>
@@ -64,6 +65,7 @@ function PlayVideo({ apiUrl, apiKey, topBtn }) {
             onChange={(event) => setComment(event.target.value)}
             value={comment}
             placeholder="..."
+            required
           />
           <div>
             <button
