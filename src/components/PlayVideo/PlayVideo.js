@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import YouTube from "react-youtube";
 import "./PlayVideo.css";
 
-function PlayVideo({ apiUrl, apiKey }) {
+function PlayVideo({ apiUrl, apiKey, topBtn }) {
   const { id } = useParams();
   const [commenterName, setCommenterName] = useState("");
   const [comment, setComment] = useState("");
@@ -79,16 +79,19 @@ function PlayVideo({ apiUrl, apiKey }) {
         <div className="comments-list">
           {commentArray.map((item, index) => {
             return (
-              <p key={index}>
+              <div key={index}>
                 <div className="commenter-name">
                   <strong>{item.commenterName}</strong>
                 </div>
-                {`${item.comment}`}
-              </p>
+                <div>{`${item.comment}`}</div>
+              </div>
             );
           })}
         </div>
       </div>
+      <button id="topBtn" onClick={topBtn}>
+        &#8593;
+      </button>
     </div>
   );
 }

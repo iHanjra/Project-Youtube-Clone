@@ -9,7 +9,14 @@ import PlayVideo from "./components/PlayVideo/PlayVideo.js";
 function App() {
   const apiUrl = process.env.REACT_APP_API_BASE_URL;
   const apiKey = process.env.REACT_APP_API_KEY;
-  
+
+  function topBtn() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
   return (
     <div className="App">
       <div>
@@ -18,12 +25,14 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<Home apiUrl={apiUrl} apiKey={apiKey} />}
+              element={<Home apiUrl={apiUrl} apiKey={apiKey} topBtn={topBtn} />}
             />
             <Route path="/about" element={<About />} />
             <Route
               path="/videos/:id"
-              element={<PlayVideo apiUrl={apiUrl} apiKey={apiKey} />}
+              element={
+                <PlayVideo apiUrl={apiUrl} apiKey={apiKey} topBtn={topBtn} />
+              }
             />
           </Routes>
         </Router>

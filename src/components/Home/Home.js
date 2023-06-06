@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import "./Home.css";
 
-export default function Home({ apiUrl, apiKey }) {
+export default function Home({ apiUrl, apiKey, topBtn }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [videos, setVideos] = useState([]);
   const [errorModal, setErrorModal] = useState(false);
@@ -91,13 +91,15 @@ export default function Home({ apiUrl, apiKey }) {
                   style={{
                     fontWeight: "bold",
                     color: "black",
-
                   }}
                   dangerouslySetInnerHTML={{ __html: video.title }}
                 />
               </Link>
             </ul>
           ))}
+          <button id="topBtn" onClick={topBtn}>
+            &#8593;
+          </button>
         </div>
       )}
 

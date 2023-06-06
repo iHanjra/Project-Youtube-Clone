@@ -5,11 +5,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #E4F2FF;
 }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, “Courier New”,
     monospace;
 }
-#root {
-  background-color: #E4F2FF;
-}
+
+#topBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #002f5c;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 20px;
+  }
